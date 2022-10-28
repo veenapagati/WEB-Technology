@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>  
+
+
+    </head>
+    <script>
+        function login(){
+           var email = document.getElementById("email")
+           var password = document.getElementById("password")
+           console.log(email.value)
+           console.log(password.value)
+
+           var registereduser = localStorage.getItem("xworkzuser")
+           console.log(registereduser)
+           console.log(registereduser.email)
+           var registeredobj = JSON.parse(registereduser)
+
+           console.log(registeredobj)
+           if(email.value == registeredobj.Email) {
+            console.log("login success")
+            window.location.href="https://facebook.com"
+            // navigate to html page
+            window.location.href="./index.HTML"
+
+           }else{
+            console.log("invalid email or password")
+           }
+
+           // var a 
+           // let b
+           // dofferent between var,let
+           // difference between == and ===
+           //display date in html
+           // what is function 
+           // for ()
+           // array
+                }
+    </script>
+    <body>
+        <form>
+            <div>
+                <label>Enter Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label>Enter password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button onclick="login()" type="button">Login</button>
+            <button>Reset</button>
+        </form>
+    </body>
+        </html>
+

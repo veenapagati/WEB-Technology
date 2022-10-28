@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validate(){
+                console.log("calling validate function")
+               var userName= document.getElementById("userName")
+               console.log(userName.value)
+               console.log(userName.value.length)
+               if(userName.value==''){
+                console.log("please enter username")
+                var errorUserName=document.getElementById("errorUserName")
+                errorUserName.innerHTML = "please enter UserName"
+                errorUserName.style.color= 'green'
+               }
+               var Email = document.getElementById("Email")
+               console.log(Email.value)
+               if(Email.value == ''){
+               console.log("please Enter Email")
+               var errorUseEmail=document.getElementById("errorEmail")
+                errorEmail.innerHTML = "please enter Email"
+                errorEmail.style.color= 'green'
+            }
+            var gender = document.fromregister.gender
+               console.log(gender)
+               console.log(gender[0])
+               console.log(gender[1])
+               console.log(gender[2])
+               console.log(gender[0].checked)
+               console.log(gender[1].checked)
+               console.log(gender[2].checked)
+               if(gender[0].checked==false && gender[2].checked==false)
+               {
+                console.log("please select gender")
+               }
+            
+               var city = document.fromregister.city
+               console.log(city)
+               if(city.value == "0") {
+                console.log("please select city")
+                var errorcity = document.getElementById("errorcity")
+                errorcity.innerHTML = "please select city"
+                errorcity.style.color = "red"
+               }
+               localStorage.setItem("javascript","storage in localstorage")
+               console.log(userName.value)
+               
+               console.log(Email.value)
+               var obj = {
+                "userName":userName.value,
+                "Email" : Email.value,
+                
+               }
+               console.log(obj)
+               localStorage.setItem("javascript","storage in localstorage")
+               var objstring=JSON.stringify(obj)
+               console.log(objstring)
+               localStorage.setItem("xworkzuser",objstring)
+               localStorage.getItem("xworkzuser")
+
+               
+
+
+        }
+        </script>
+
+    </head>
+    <body>
+        <!---body---->
+        <form name="fromregister"> 
+            <div>
+                <label>Enter user name</label>
+                <input type="text" name="userName" id="userName">
+                <span id="errorUserName"></span>
+                <div id="errorUserName"></div>
+                
+            </div>
+            <div>
+                <label> Enter User Email</label>
+                <input type="Email" name = "Email" id ="Email">
+                <span id="errorEmail"></span>
+            </div>
+            
+            <div>
+                <label>select gender</label>
+                <input type="radio" name="gender"> male
+                <input type="radio" name="gender"> female
+                <input type="radio" name="gender"> other
+
+            </div>
+            <div>
+                <label>select city</label>
+                <select name="city">
+                    <option value="0">---select city---</option>
+                    <option>bangalore</option>
+                    <option>hospet</option>
+                    <option>mangalore</option>
+                    <option>bagalkot</option>
+                    <option>shivmogga</option>
+                </select>
+                <span id ="errorcity"></span>
+            </div>
+            <button type="button"onclick="validate()"> Register</button>
+            <button type="reset">Reset</button>
+        </form>
+        <!---when you click button generate event input-click on button output-error message-->
+    </body>
+</html>
